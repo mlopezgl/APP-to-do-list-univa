@@ -1,7 +1,12 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-export default function ToDoItem({ task, onDelete }) {
+interface ToDoItemProps {
+  task: { id: string, title: string };
+  onDelete: (id: string) => void;
+}
+
+export default function ToDoItem({ task, onDelete }: ToDoItemProps) {
   return (
     <View style={styles.item}>
       <Text>{task.title}</Text>

@@ -3,14 +3,14 @@ import { View, Button, FlatList, StyleSheet } from 'react-native';
 import ToDoItem from '../components/ToDoItem';
 import Task from '../models/Task';
 
-export default function HomeScreen({ navigation }) {
-  const [tasks, setTasks] = useState([]);
+export default function HomeScreen({ navigation }: any) {
+  const [tasks, setTasks] = useState<Task[]>([]);
 
-  const handleDeleteTask = (id) => {
+  const handleDeleteTask = (id: string) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
-  const handleAddTask = (taskTitle) => {
+  const handleAddTask = (taskTitle: string) => {
     const newTask = new Task(Date.now().toString(), taskTitle);
     setTasks([...tasks, newTask]);
   };

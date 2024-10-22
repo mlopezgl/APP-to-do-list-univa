@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
-export default function AddTaskScreen({ route, navigation }) {
+export default function AddTaskScreen({ route, navigation }: any) {
   const [taskTitle, setTaskTitle] = useState('');
   const { addTask } = route.params;
 
