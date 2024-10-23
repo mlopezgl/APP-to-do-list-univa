@@ -1,5 +1,9 @@
-class Task {
-  constructor(public id: string, public title: string) {}
+export interface Task {
+    id: number; 
+    text: string;
+    completed: boolean;
 }
 
-export default Task;
+export const createTask = (id: number, text: string): Task => {
+    return { id, text, completed: false};
+};
